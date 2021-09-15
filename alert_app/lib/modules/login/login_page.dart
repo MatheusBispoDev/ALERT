@@ -1,8 +1,9 @@
+import 'package:alert_app/modules/login/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:alert_app/application/ui/theme_extensions.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends GetView<LoginController> {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
@@ -58,7 +59,9 @@ class LoginPage extends StatelessWidget {
                     colorButton: Colors.white,
                     textColor: Colors.black,
                     title: 'Entrar com o Google',
-                    onPress: () {},
+                    onPress: () {
+                      controller.login();
+                    },
                   ),
                   SizedBox(height: 20),
                   ButtonCustomLogin(
