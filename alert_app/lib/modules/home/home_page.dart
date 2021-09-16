@@ -1,149 +1,72 @@
+import 'package:alert_app/modules/diary/diary_page.dart';
+import 'package:alert_app/modules/home/home_controller.dart';
+import 'package:alert_app/modules/lers/lers_page.dart';
+import 'package:alert_app/modules/profile/profile_page.dart';
+import 'package:alert_app/modules/search/search_page.dart';
+import 'package:alert_app/modules/timer/timer_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:alert_app/application/ui/theme_extensions.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text(
-          'ALERT',
-          style: TextStyle(
-              color: new Color(0xFF334856),
-              fontSize: 24,
-              fontWeight: FontWeight.bold),
-        ),
-        toolbarOpacity: 1.0,
-        shape: InputBorder.none,
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.width * 0.5,
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              decoration: BoxDecoration(
-                color: new Color(0xFF334856),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40.0),
-                  topRight: Radius.circular(40.0),
-                ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Divider(
-                    color: Colors.white,
-                    thickness: 3,
-                    indent: 160,
-                    endIndent: 160,
-                  ),
-                  SizedBox(height: 10),
-                  Text('Selecione a categoria',
-                      style: TextStyle(color: Colors.white, fontSize: 16)),
-                  SizedBox(height: 10),
-                  Text('Filtre as LERS por:',
-                      style: TextStyle(color: Colors.white, fontSize: 14)),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconSelection(),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.55,
-              child: ListView(
-                children: [
-                  CardItens(),
-                ],
-              ),
-            ),
+      bottomNavigationBar: Obx(() {
+        return BottomNavigationBar(
+          backgroundColor: context.colorBlue,
+          selectedItemColor: context.colorOrange,
+          unselectedItemColor: context.colorGrey,
+          currentIndex: controller.pageIndex,
+          iconSize: 24,
+          onTap: controller.goToPage,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'LERS'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.search), label: 'Procurar'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.dialer_sip), label: 'Diário'),
+            BottomNavigationBarItem(icon: Icon(Icons.timer), label: 'Timer'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class IconSelection extends StatelessWidget {
-  const IconSelection({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 60,
-            width: 60,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child: Center(
-              child: Icon(
-                Icons.h_mobiledata,
-                size: 40,
-                color: Colors.orange,
-              ),
-            ),
-          ),
-          SizedBox(height: 5),
-          Text(
-            'Mãos',
-            style: TextStyle(
-                color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CardItens extends StatelessWidget {
-  const CardItens({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height * 0.1,
-      child: Card(
-        shape: InputBorder.none,
-        borderOnForeground: false,
-        child: ListTile(
-          title: Text(
-            'Síndrome do túnel do Carpo',
-            style: TextStyle(
-                color: new Color(0xFF334856),
-                fontSize: 16,
-                fontWeight: FontWeight.bold),
-          ),
-          subtitle: Text(
-              'Essa doença é uma forma bastante comum de LER, provocada pela compressão do nervo ...'),
-          trailing: Icon(
-            Icons.navigate_next,
-            size: 32,
-            color: new Color(0xFF334856),
-          ),
-        ),
+        );
+      }),
+      body: Navigator(
+        key: Get.nestedKey(HomeController.NAVIGATOR_KEY),
+        initialRoute: '/lers',
+        onGenerateRoute: (settings) {
+          if (settings.name == '/lers') {
+            return GetPageRoute(
+              settings: settings,
+              page: () => LersPage(),
+            );
+          }
+          if (settings.name == '/search') {
+            return GetPageRoute(
+              settings: settings,
+              page: () => SearchPage(),
+            );
+          }
+          if (settings.name == '/diary') {
+            return GetPageRoute(
+              settings: settings,
+              page: () => DiaryPage(),
+            );
+          }
+          if (settings.name == '/timer') {
+            return GetPageRoute(
+              settings: settings,
+              page: () => TimerPage(),
+            );
+          }
+          if (settings.name == '/profile') {
+            return GetPageRoute(
+              settings: settings,
+              page: () => ProfilePage(),
+            );
+          }
+          return null;
+        },
       ),
     );
   }

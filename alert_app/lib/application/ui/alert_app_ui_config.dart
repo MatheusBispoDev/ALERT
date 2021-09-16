@@ -16,5 +16,8 @@ class AlertAppUiConfig {
               fontWeight: FontWeight.w500),
           centerTitle: true,
         ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: Color(0xFF334856),
+        )
       );
 }
