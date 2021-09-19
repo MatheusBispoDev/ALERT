@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
       initialBinding: ApplicationBindings(),
       title: AlertAppUiConfig.title,
       debugShowCheckedModeBanner: false,
-      theme: AlertAppUiConfig.theme,
       getPages: [
         ...SplashModule().routers,
         ...LoginModule().routers,

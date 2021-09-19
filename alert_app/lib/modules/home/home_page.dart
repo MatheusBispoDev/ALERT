@@ -1,6 +1,7 @@
 import 'package:alert_app/modules/diary/diary_page.dart';
 import 'package:alert_app/modules/home/home_controller.dart';
 import 'package:alert_app/modules/lers/lers_page.dart';
+import 'package:alert_app/modules/lers/lerts_bindings.dart';
 import 'package:alert_app/modules/profile/profile_page.dart';
 import 'package:alert_app/modules/search/search_page.dart';
 import 'package:alert_app/modules/timer/timer_page.dart';
@@ -14,20 +15,33 @@ class HomePage extends GetView<HomeController> {
     return Scaffold(
       bottomNavigationBar: Obx(() {
         return BottomNavigationBar(
-          backgroundColor: context.colorBlue,
           selectedItemColor: context.colorOrange,
           unselectedItemColor: context.colorGrey,
           currentIndex: controller.pageIndex,
           iconSize: 24,
           onTap: controller.goToPage,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'LERS'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.search), label: 'Procurar'),
+              icon: Icon(Icons.home),
+              label: 'LERS',
+              backgroundColor: context.colorBlue,
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.dialer_sip), label: 'Diário'),
-            BottomNavigationBarItem(icon: Icon(Icons.timer), label: 'Timer'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
+                icon: Icon(Icons.search),
+                label: 'Procurar',
+                backgroundColor: context.colorBlue),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.dialer_sip),
+                label: 'Diário',
+                backgroundColor: context.colorBlue),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.timer),
+                label: 'Timer',
+                backgroundColor: context.colorBlue),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Perfil',
+                backgroundColor: context.colorBlue),
           ],
         );
       }),
@@ -39,6 +53,7 @@ class HomePage extends GetView<HomeController> {
             return GetPageRoute(
               settings: settings,
               page: () => LersPage(),
+              binding: LersBindings(),
             );
           }
           if (settings.name == '/search') {

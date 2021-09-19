@@ -7,9 +7,9 @@ import './login_service.dart';
 
 
 class LoginServiceImpl implements LoginService {
-  LoginRepository _loginRepository;
+  final LoginRepository _loginRepository;
 
-  LoginServiceImpl({required LoginRepository loginRepository})
+  const LoginServiceImpl({required LoginRepository loginRepository})
       : _loginRepository = loginRepository;
 
   @override
