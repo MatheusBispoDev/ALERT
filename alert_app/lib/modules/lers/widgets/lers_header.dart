@@ -1,7 +1,9 @@
+import 'package:alert_app/modules/lers/lers_controller.dart';
 import 'package:alert_app/modules/lers/widgets/lers_category.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class LersHeader extends StatelessWidget {
+class LersHeader extends GetView<LersController> {
   const LersHeader({Key? key}) : super(key: key);
 
   @override
@@ -33,31 +35,22 @@ class LersHeader extends StatelessWidget {
           Text('Filtre as LERS por:',
               style: TextStyle(color: Colors.white, fontSize: 14)),
           SizedBox(height: 30),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              LersCategory(
-                title: 'Mãos',
-                icon: Icons.safety_divider,
-                onTap: () {},
-              ),
-              LersCategory(
-                title: 'Costas',
-                icon: Icons.handyman,
-                onTap: () {},
-              ),
-              LersCategory(
-                title: 'Lombrar',
-                icon: Icons.baby_changing_station,
-                onTap: () {},
-              ),
-              LersCategory(
-                title: 'Outros',
-                icon: Icons.e_mobiledata,
-                onTap: () {},
-              ),
-            ],
-          ),
+          Obx(() {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: controller.categorys
+                  .map(
+                    (category) => LersCategory(
+                      category: category,
+                      icon: Icons.gamepad,
+                      selected:
+                          controller.categorySelected.value?.id == category.id,
+                      onTap: () => controller.filterByCategory(category),
+                    ),
+                  )
+                  .toList(),
+            );
+          }),
         ],
       ),
     );

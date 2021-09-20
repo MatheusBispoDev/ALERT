@@ -1,3 +1,4 @@
+import 'package:alert_app/models/category_model.dart';
 import 'package:alert_app/models/lers_model.dart';
 import 'package:alert_app/restClient/restClient.dart';
 
@@ -25,5 +26,25 @@ class LersRepositoryImpl implements LersRepository {
       throw Exception('Erro ao buscar lers');
     }
     return ler.body ?? <LersModel>[];
+  }
+
+  @override
+  Future<List<CategoryModel>> getCategorys() async {
+    final category = await _restClient.get<List<CategoryModel>>('alert.json',
+        decoder: (data) {
+      final categorys = data['categorys'];
+      if (categorys != null) {
+        return categorys
+            .map<CategoryModel>((data) => CategoryModel.fromMap(data))
+            .toList();
+      }
+      return <CategoryModel>[];
+    });
+    if (category.hasError) {
+      print('Erro ao buscar categorias [${category.statusText}]');
+      throw Exception('Erro ao buscar categorias');
+    }
+
+    return category.body ?? <CategoryModel>[];
   }
 }
