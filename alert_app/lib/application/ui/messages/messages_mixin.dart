@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 mixin MessagesMixin on GetxController {
   void messageListener(Rxn<MessageModel> message) {
     ever<MessageModel?>(message, (model) {
       if (model != null) {
-        Get.snackbar(
-          model.title,
-          model.message,
-          backgroundColor: model.type.color(),
+        return Fluttertoast.showToast(
+          msg: model.message,
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 2,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 20.0,
         );
       }
     });

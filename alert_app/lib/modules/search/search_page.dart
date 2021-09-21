@@ -1,16 +1,32 @@
+import 'package:alert_app/modules/search/widgets/search_content.dart';
+import 'package:alert_app/modules/search/widgets/search_header.dart';
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-    
-class SearchPage extends StatelessWidget {
+import './search_controller.dart';
 
-  const SearchPage({ Key? key }) : super(key: key);
-  
+class SearchPage extends GetView<SearchController> {
+  const SearchPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Procurar'),
+        backgroundColor: Colors.white,
+        elevation: 0,
       ),
-      body: Container(),
+      body: SizedBox(
+        height: Get.height,
+        width: Get.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SearchHeader(),
+            SearchContent(),
+          ],
+        ),
+      ),
     );
   }
 }

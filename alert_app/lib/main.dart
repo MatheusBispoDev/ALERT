@@ -1,6 +1,7 @@
 import 'package:alert_app/application/bindings/application_bindings.dart';
 import 'package:alert_app/application/ui/alert_app_ui_config.dart';
 import 'package:alert_app/modules/home/home_module.dart';
+import 'package:alert_app/modules/lers_detail/lers_detail_module.dart';
 import 'package:alert_app/modules/login/login_module.dart';
 import 'package:alert_app/modules/splash/splash_module.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         ...SplashModule().routers,
         ...LoginModule().routers,
         ...HomeModule().routers,
+        ...LersDetailModule().routers,
       ],
     );
   }

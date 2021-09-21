@@ -10,7 +10,7 @@ class LersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(backgroundColor: Colors.white),
+      appBar: AppBar(backgroundColor: Colors.white, elevation: 0),
       body: SizedBox(
         height: Get.height,
         width: Get.width,
