@@ -9,7 +9,7 @@ class LersDetailModule implements Module {
     GetPage(
       name: '/lers/detail',
       page: () => LersDetailPage(),
-      binding: LersDetailBindings()
+      binding: LersDetailBindings(),
     ),
   ];
 }

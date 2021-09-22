@@ -1,3 +1,4 @@
+import 'package:alert_app/application/ui/alert_app_icons_icons.dart';
 import 'package:alert_app/modules/lers/lers_controller.dart';
 import 'package:alert_app/modules/lers/widgets/lers_category.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,7 @@ class LersHeader extends GetView<LersController> {
                   .map(
                     (category) => LersCategory(
                       category: category,
-                      icon: Icons.gamepad,
+                      icon: getMapIcon[category.id],
                       selected:
                           controller.categorySelected.value?.id == category.id,
                       onTap: () => controller.filterByCategory(category),
@@ -56,3 +57,4 @@ class LersHeader extends GetView<LersController> {
     );
   }
 }
+

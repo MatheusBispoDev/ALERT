@@ -1,14 +1,16 @@
+import 'package:alert_app/application/ui/alert_app_icons_icons.dart';
+import 'package:alert_app/models/lers_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-AppBar buildLersDetailtAppBar() {
+AppBar buildLersDetailtAppBar({required LersModel? lers}) {
   return AppBar(
     title: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Icon(
-          Icons.data_saver_off,
+          getMapIcon[lers?.categorys[0]],
           size: 55,
         ),
         Padding(
@@ -40,9 +42,10 @@ AppBar buildLersDetailtAppBar() {
       ],
     ),
     backgroundColor: Color(0xFF858585),
-    leading: Icon(
-      Icons.navigate_before,
-      size: 36,
+    leading: IconButton(
+      icon: Icon(Icons.navigate_before),
+      iconSize: 36,
+      onPressed: () => Get.offNamed('/home'),
     ),
     toolbarHeight: Get.height * 0.12,
   );
