@@ -10,7 +10,9 @@ class HomeController extends GetxController {
   int get pageIndex => _pagesIndex.value;
 
   void goToPage(int page) {
-    _pagesIndex(page);
-    Get.offNamed(_pages[page], id: NAVIGATOR_KEY);
+    if (_pagesIndex.value != page) {
+      _pagesIndex(page);
+      Get.offNamed(_pages[page], id: NAVIGATOR_KEY);
+    }
   }
 }

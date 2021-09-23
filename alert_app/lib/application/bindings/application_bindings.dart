@@ -1,4 +1,5 @@
 import 'package:alert_app/application/auth/auth_service.dart';
+import 'package:alert_app/application/profile_configurations/profile_configurations.dart';
 import 'package:alert_app/repositories/lers/lers_repository.dart';
 import 'package:alert_app/repositories/lers/lers_repository_impl.dart';
 import 'package:alert_app/repositories/login/login_repository.dart';
@@ -31,5 +32,7 @@ class ApplicationBindings extends Bindings {
         fenix: true);
     // Cria a instância para ficar verificando se o usuário já está logado ou não no app
     Get.put(AuthService()).init();
+
+    Get.put(ProfileConfiguarions());
   }
 }

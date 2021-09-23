@@ -2,6 +2,7 @@ import 'package:alert_app/modules/diary/diary_page.dart';
 import 'package:alert_app/modules/home/home_controller.dart';
 import 'package:alert_app/modules/lers/lers_page.dart';
 import 'package:alert_app/modules/lers/lerts_bindings.dart';
+import 'package:alert_app/modules/profile/profile_bindings.dart';
 import 'package:alert_app/modules/profile/profile_page.dart';
 import 'package:alert_app/modules/search/search_page.dart';
 import 'package:alert_app/modules/timer/timer_page.dart';
@@ -82,6 +83,7 @@ class HomePage extends GetView<HomeController> {
             return GetPageRoute(
               settings: settings,
               page: () => ProfilePage(),
+              binding: ProfileBindings(),
             );
           }
           return null;

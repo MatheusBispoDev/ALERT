@@ -20,6 +20,7 @@ dependencies:
   google_sign_in: ^5.1.0
   fluttertoast: ^8.0.8
   circular_countdown_timer: ^0.2.0
+  image_picker: ^0.8.4+2
   
   cupertino_icons: ^1.0.2
 
