@@ -3,7 +3,6 @@ import 'package:alert_app/models/category_model.dart';
 import 'package:flutter/material.dart';
 
 class LersCategory extends StatelessWidget {
-
   LersCategory(
       {Key? key,
       required this.category,
@@ -23,7 +22,7 @@ class LersCategory extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 13),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

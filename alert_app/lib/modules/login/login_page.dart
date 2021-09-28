@@ -48,29 +48,32 @@ class LoginPage extends GetView<LoginController> {
               ),
             ),
             SizedBox(height: Get.height * 0.001),
-            Container(
-              height: Get.height * 0.261,
-              width: Get.width,
-              color: context.colorBlue,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ButtonCustomLogin(
-                    colorButton: Colors.white,
-                    textColor: Colors.black,
-                    title: 'Entrar com o Google',
-                    onPress: () {
-                      controller.login();
-                    },
-                  ),
-                  SizedBox(height: 20),
-                  ButtonCustomLogin(
-                    colorButton: context.colorBlue,
-                    textColor: Colors.white,
-                    title: 'Entrar como visitante',
-                    onPress: () {},
-                  ),
-                ],
+            Expanded(
+              child: Container(
+                width: Get.width,
+                color: context.colorBlue,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ButtonCustomLogin(
+                      colorButton: Colors.white,
+                      textColor: Colors.black,
+                      title: 'Entrar com o Google',
+                      onPress: () {
+                        controller.login();
+                      },
+                    ),
+                    SizedBox(height: 20),
+                    ButtonCustomLogin(
+                      colorButton: context.colorBlue,
+                      textColor: Colors.white,
+                      title: 'Entrar como visitante',
+                      onPress: () {
+                        Get.offAllNamed('/home');
+                      },
+                    ),
+                  ],
+                ),
               ),
             )
           ],

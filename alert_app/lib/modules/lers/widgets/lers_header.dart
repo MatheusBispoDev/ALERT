@@ -10,8 +10,8 @@ class LersHeader extends GetView<LersController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.width * 0.6,
-      width: MediaQuery.of(context).size.width,
+      height: Get.width * 0.6,
+      width: Get.width,
       padding: EdgeInsets.symmetric(horizontal: 20.0),
       decoration: BoxDecoration(
         color: new Color(0xFF334856),
@@ -38,7 +38,8 @@ class LersHeader extends GetView<LersController> {
           SizedBox(height: 30),
           Obx(() {
             return Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: controller.categorys
                   .map(
                     (category) => LersCategory(

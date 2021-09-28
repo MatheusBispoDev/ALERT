@@ -68,5 +68,35 @@
             "id": 4,
             "name": "Outros"
         }
+    ],
+    "stretches": [
+        {
+            "id": 1,
+            "name": "Alongamentos para mãos",
+            "description": "Alongamentos para mãos",
+            "categorys": [1],
+            "video": "https://i0.wp.com/thumbs.gfycat.com/GenuineBouncyIberianlynx-size_restricted.gif?w=1155&h=840"
+        },
+        {
+            "id": 2,
+            "name": "Alongamentos para as costas",
+            "description": "Alongamentos para mãos",
+            "categorys": [2],
+            "video": "http://nabexigamandoeu.pt/wp-content/uploads/2018/06/02.gif"
+        },
+        {
+            "id": 3,
+            "name": "Alongamentos para lombar",
+            "description": "Alongamentos para lombar",
+            "categorys": [3],
+            "video": "http://nabexigamandoeu.pt/wp-content/uploads/2018/06/07_gif.gif"
+        },
+        {
+            "id": 4,
+            "name": "Alongamentos",
+            "description": "Alongamentos",
+            "categorys": [4],
+            "video": "http://nabexigamandoeu.pt/wp-content/uploads/2018/06/08_gif.gif"
+        }
     ]
 }
