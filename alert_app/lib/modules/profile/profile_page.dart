@@ -1,11 +1,12 @@
-import 'package:alert_app/modules/profile/widgets/profile_button_exit.dart';
+import 'package:alert_app/modules/profile/profile_controller.dart';
+import 'package:alert_app/modules/profile/widgets/profile_button.dart';
 import 'package:alert_app/modules/profile/widgets/profile_content.dart';
 import 'package:alert_app/modules/profile/widgets/profile_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:get/get.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends GetView<ProfileController> {
   const ProfilePage({Key? key}) : super(key: key);
 
   @override
@@ -24,7 +25,15 @@ class ProfilePage extends StatelessWidget {
               ProfileHeader(),
               SizedBox(height: Get.height * 0.02),
               ProfileContent(),
-              ProfileButtonExit(),
+              ProfileButton(
+                titleButton: 'Ficha Técnica',
+                onPress: () => Get.toNamed('/profile/medical'),
+              ),
+              SizedBox(height: Get.height * 0.02),
+              ProfileButton(
+                titleButton: 'Sair',
+                onPress: () => controller.logout(),
+              ),
               SizedBox(height: Get.height * 0.02),
               Text(
                 'Version 0.1',

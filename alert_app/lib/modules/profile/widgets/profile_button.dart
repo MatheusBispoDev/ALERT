@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ProfileButtonExit extends StatelessWidget {
-  const ProfileButtonExit({Key? key}) : super(key: key);
+class ProfileButton extends StatelessWidget {
+  const ProfileButton({
+    Key? key,
+    required this.titleButton,
+    required this.onPress,
+  }) : super(key: key);
+
+  final String titleButton;
+  final Function() onPress;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Get.width * 0.6,
+      width: Get.width * 0.8,
       height: 60,
       child: ElevatedButton(
         child: Text(
-          'Sair',
+          titleButton,
           style: TextStyle(
             color: const Color(0xFF334856),
             fontSize: 14,
@@ -19,7 +26,7 @@ class ProfileButtonExit extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-        onPressed: () {},
+        onPressed: onPress,
         style: ElevatedButton.styleFrom(
           primary: Colors.white,
           shape: RoundedRectangleBorder(

@@ -1,3 +1,4 @@
+import 'package:alert_app/modules/diary/diary_bindings.dart';
 import 'package:alert_app/modules/diary/diary_page.dart';
 import 'package:alert_app/modules/home/home_controller.dart';
 import 'package:alert_app/modules/lers/lers_page.dart';
@@ -73,6 +74,7 @@ class HomePage extends GetView<HomeController> {
             return GetPageRoute(
               settings: settings,
               page: () => DiaryPage(),
+              binding: DiaryBindings(),
             );
           }
           if (settings.name == '/timer') {

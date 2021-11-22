@@ -34,4 +34,8 @@ class ProfileController extends GetxController with MessagesMixin {
           title: 'Error', message: 'Error ao acessar galeria'));
     }
   }
+
+  Future<void> logout() async {
+    await _profileSevice.logout();
+  }
 }

@@ -19,7 +19,7 @@ AppBar buildLersDetailtAppBar({required LersModel? lers}) {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Mãos'),
+              Text('${lers!.categorys}'),
               Padding(
                 padding: const EdgeInsets.only(top: 4, bottom: 4),
                 child: Container(
@@ -29,11 +29,17 @@ AppBar buildLersDetailtAppBar({required LersModel? lers}) {
                   color: Colors.white,
                 ),
               ),
-              Text(
-                'Síndrome do túnel do Carpo',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
+              Container(
+                width: Get.size.width * 0.6,
+                child: Text(
+                  lers.name,
+                  maxLines: 1,
+                  softWrap: false,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                  ),
                 ),
               ),
             ],
