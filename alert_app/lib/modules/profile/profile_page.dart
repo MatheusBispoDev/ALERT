@@ -25,8 +25,9 @@ class ProfilePage extends GetView<ProfileController> {
               ProfileHeader(),
               SizedBox(height: Get.height * 0.02),
               ProfileContent(),
+              SizedBox(height: Get.height * 0.02),
               ProfileButton(
-                titleButton: 'Ficha Técnica',
+                titleButton: 'Ficha Medica',
                 onPress: () => Get.toNamed('/profile/medical'),
               ),
               SizedBox(height: Get.height * 0.02),

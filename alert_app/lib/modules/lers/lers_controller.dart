@@ -30,6 +30,7 @@ class LersController extends GetxController with LoaderMixin, MessagesMixin {
     super.onReady();
     _loading(true);
     await _getCategorys();
+    categorySelected.value = categorys[0];
     await _getLers();
     _loading(false);
   }

@@ -13,8 +13,7 @@ class ProfileContent extends StatelessWidget {
         height: Get.height * 0.45,
         width: Get.width * 0.9,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: [
             ProfileContentCardText(textCard: 'Preferências'),
             ProfileContentCardSwitch(textCard: 'Indicar Alongamentos'),

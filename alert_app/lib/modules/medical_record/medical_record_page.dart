@@ -17,42 +17,49 @@ class MedicalRecordPage extends GetView<MedicalRecordController> {
         child: ListView(
           children: [
             MedicalRecordItem(
+              controller: controller.textControllerWeight,
               titleItem: 'Peso',
               keybordType: TextInputType.number,
               labelTaxt: '80.70',
             ),
             MedicalRecordItem(
+              controller: controller.textControllerHeight,
               titleItem: 'Altura',
               keybordType: TextInputType.number,
               labelTaxt: '1.82',
             ),
             MedicalRecordItem(
+              controller: controller.textControllerGenre,
               titleItem: 'Genêro',
               keybordType: TextInputType.number,
               labelTaxt: 'Masculino ou Feminino',
             ),
             MedicalRecordItem(
+              controller: controller.textControllerAge,
               titleItem: 'Idade',
               keybordType: TextInputType.number,
               labelTaxt: '22',
             ),
             MedicalRecordItem(
+              controller: controller.textControllerAverageTimeSitting,
               titleItem: 'Média Tempo Sentado',
               keybordType: TextInputType.number,
               labelTaxt: '5h 20min = 5.20',
             ),
             MedicalRecordItem(
+              controller: controller.textControllerPainIntensity,
               titleItem: 'Intensidade da dor',
               keybordType: TextInputType.number,
               labelTaxt: 'Alta / Media / Baixa',
             ),
             MedicalRecordItem(
+              controller: controller.textControllerFrequencyPhysicalActivity,
               titleItem: 'Frequência de Atividad Física',
               keybordType: TextInputType.number,
               labelTaxt: '5h = 5',
             ),
             ProfileButton(
-              onPress: () {},
+              onPress: () => controller.saveMedicalRecord(),
               titleButton: 'Salvar',
             ),
           ],

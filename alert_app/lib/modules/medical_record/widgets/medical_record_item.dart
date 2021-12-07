@@ -6,12 +6,14 @@ class MedicalRecordItem extends StatelessWidget {
     Key? key,
     required this.titleItem,
     required this.labelTaxt,
-    this.keybordType = TextInputType.text,
+    this.keybordType = TextInputType.text, 
+    required this.controller,
   }) : super(key: key);
 
   final String titleItem;
   final String labelTaxt;
   final TextInputType? keybordType;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,7 @@ class MedicalRecordItem extends StatelessWidget {
           Container(
             width: Get.width * 0.4,
             child: TextField(
+              controller: controller,
               keyboardType: keybordType,
               decoration: InputDecoration(
                 border: OutlineInputBorder(

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 class MedicalRecordModel {
   final String userId;
+  final int weight;
   final int height;
   final String genre;
   final int age;
@@ -11,6 +12,7 @@ class MedicalRecordModel {
 
   MedicalRecordModel({
     required this.userId,
+    required this.weight,
     required this.height,
     required this.genre,
     required this.age,
@@ -22,6 +24,7 @@ class MedicalRecordModel {
   Map<String, dynamic> toMap() {
     return {
       'userId': userId,
+      'weight': weight,
       'height': height,
       'genre': genre,
       'age': age,
@@ -34,6 +37,7 @@ class MedicalRecordModel {
   factory MedicalRecordModel.fromMap(Map<String, dynamic> map) {
     return MedicalRecordModel(
       userId: map['userId'] ?? '',
+      weight: map['weight'] ?? 0,
       height: map['height'] ?? 0,
       genre: map['genre'] ?? '',
       age: map['age'] ?? 0,

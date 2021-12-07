@@ -29,7 +29,7 @@ class TimerPage extends StatelessWidget {
         Positioned(
           bottom: Get.height * 0.25,
           child: CircularCountDownTimer(
-            duration: 10,
+            duration: 100,
             initialDuration: 5,
             isReverse: true,
             controller: CountDownController(),
