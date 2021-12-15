@@ -18,13 +18,16 @@ class SearchPage extends GetView<SearchController> {
       body: SizedBox(
         height: Get.height,
         width: Get.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SearchHeader(),
-            SearchContent(),
-          ],
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SearchHeader(),
+              SearchContent(),
+            ],
+          ),
         ),
       ),
     );

@@ -18,7 +18,7 @@ AppBar buildAppBar({required String title}) {
         color: Color(0xFF334856),
       ),
       iconSize: 32,
-      onPressed: () => Get.offNamed('/home'),
+      onPressed: () => Get.back(),
     ),
     toolbarHeight: Get.height * 0.12,
   );
