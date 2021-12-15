@@ -7,6 +7,7 @@ import 'package:alert_app/modules/profile/profile_bindings.dart';
 import 'package:alert_app/modules/profile/profile_page.dart';
 import 'package:alert_app/modules/search/search_bindings.dart';
 import 'package:alert_app/modules/search/search_page.dart';
+import 'package:alert_app/modules/timer/timer_bindings.dart';
 import 'package:alert_app/modules/timer/timer_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -81,6 +82,7 @@ class HomePage extends GetView<HomeController> {
             return GetPageRoute(
               settings: settings,
               page: () => TimerPage(),
+              binding: TimerBindings(),
             );
           }
           if (settings.name == '/profile') {

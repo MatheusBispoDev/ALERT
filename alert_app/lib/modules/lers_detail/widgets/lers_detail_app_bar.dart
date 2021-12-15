@@ -4,13 +4,23 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 AppBar buildLersDetailtAppBar({required LersModel? lers}) {
+  List categorys = <String>[
+    'Mãos',
+    'Costas',
+    'Lombar',
+    'Outros',
+  ];
+
+  int lersCategoryId = lers!.categorys[0];
+
+  print('Dale: $categorys');
   return AppBar(
     title: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Icon(
-          getMapIcon[lers?.categorys[0]],
+          getMapIcon[lersCategoryId],
           size: 55,
         ),
         Padding(
@@ -19,7 +29,7 @@ AppBar buildLersDetailtAppBar({required LersModel? lers}) {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('${lers!.categorys}'),
+              Text('${categorys[lersCategoryId - 1]}'),
               Padding(
                 padding: const EdgeInsets.only(top: 4, bottom: 4),
                 child: Container(

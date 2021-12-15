@@ -81,15 +81,23 @@ class DiaryPage extends GetView<DiaryController> {
                 children: [
                   StretchesList(
                     day: 'Segunda',
-                    mounth: '20 de Setembro',
+                    mounth: '13 de Dezembro',
                   ),
                   StretchesList(
-                    day: 'Segunda',
-                    mounth: '21 de Setembro',
+                    day: 'Terça',
+                    mounth: '14 de Dezembro',
                   ),
                   StretchesList(
-                    day: 'Segunda',
-                    mounth: '20 de Setembro',
+                    day: 'Quarta',
+                    mounth: '15 de Dezembro',
+                  ),
+                  StretchesList(
+                    day: 'Quinta',
+                    mounth: '16 de Dezembro',
+                  ),
+                  StretchesList(
+                    day: 'Sexta',
+                    mounth: '17 de Dezembro',
                   ),
                 ],
               ),
