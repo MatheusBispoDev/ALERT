@@ -44,7 +44,7 @@ class MedicalRecordController extends GetxController
     // Pega o argumento que veio do MovieCard
     try {
       loading(true);
-      await getMedicalRecord();
+      //await getMedicalRecord();
 
       loading(false);
     } on Exception catch (e, s) {

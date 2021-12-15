@@ -23,6 +23,7 @@ dependencies:
   circular_countdown_timer: ^0.2.0
   image_picker: ^0.8.4+2
   syncfusion_flutter_datepicker: ^19.3.57
+  shared_preferences: ^2.0.11
   
   cupertino_icons: ^1.0.2
 
