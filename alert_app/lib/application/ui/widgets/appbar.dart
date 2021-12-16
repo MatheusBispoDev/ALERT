@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-AppBar buildAppBar({required String title}) {
+AppBar buildAppBar({required String title, double fontSize = 28}) {
   return AppBar(
     title: Text(
       title,
       style: TextStyle(
         color: Color(0xFF334856),
-        fontSize: 28,
+        fontSize: fontSize,
         fontWeight: FontWeight.w800,
       ),
     ),

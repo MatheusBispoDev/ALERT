@@ -8,8 +8,7 @@ class StretchesDetailModule implements Module {
   List<GetPage> routers = [
     GetPage(
       name: '/search/detail',
-      //page: () => App(),
-      page: () => YoutubePlayerDemo(),
+      page: () => StrechesDetailPage(),
       binding: StretchesDetailBindings(),
     ),
   ];

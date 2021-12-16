@@ -29,28 +29,32 @@ class SearchContent extends StatelessWidget {
                   icon: getMapIcon[1],
                   imageNetwork:
                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc8YYdS69o8A6eukzATkyjg_iaRMVsXs3AVA&usqp=CAU',
-                  videoLink: '',
+                  categoy: 0,
+                  qntDetails: 3,
                 ),
                 StretchesCard(
                   title: 'Costas',
                   icon: getMapIcon[2],
                   imageNetwork:
                       'https://static.tuasaude.com/media/article/xg/hr/exercicios-de-alongamento_54865_l.jpg',
-                  videoLink: '',
+                  categoy: 1,
+                  qntDetails: 1,
                 ),
                 StretchesCard(
                   title: 'Lombar',
                   icon: getMapIcon[3],
                   imageNetwork:
                       'https://clinicaseom.com.br/wp-content/uploads/2020/06/shutterstock_593167070.jpg',
-                  videoLink: '',
+                  categoy: 2,
+                  qntDetails: 1,
                 ),
                 StretchesCard(
                   title: 'Outros',
                   icon: getMapIcon[4],
                   imageNetwork:
                       'https://pratiquefitness.com.br/blog/wp-content/uploads/2020/07/X-Alongamentos-Para-Come%C3%A7ar-Os-Treinos-Na-Academia-2.jpg',
-                  videoLink: '',
+                  categoy: 3,
+                  qntDetails: 1,
                 ),
               ],
             ),
@@ -69,28 +73,32 @@ class SearchContent extends StatelessWidget {
                   icon: Icons.data_saver_off,
                   imageNetwork:
                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGrzMcS4WzV2QNydPnVtQimkx5mXI-wEgpfw&usqp=CAU',
-                  videoLink: '',
+                  categoy: 0,
+                  qntDetails: 0,
                 ),
                 StretchesCard(
                   title: 'Corpo todo',
                   icon: Icons.data_saver_off,
                   imageNetwork:
                       'https://wl-incrivel.cf.tsp.li/resize/728x/jpg/899/687/fb1f5152abbebb9f313cdc530b.jpg',
-                  videoLink: '',
+                  categoy: 3,
+                  qntDetails: 1,
                 ),
                 StretchesCard(
                   title: 'Costas',
                   icon: Icons.data_saver_off,
                   imageNetwork:
                       'https://doctorfeet.com.br/wp-content/uploads/2020/04/Design-sem-nome-50.jpg',
-                  videoLink: '',
+                  categoy: 1,
+                  qntDetails: 1,
                 ),
                 StretchesCard(
                   title: 'Inferiores',
                   icon: Icons.data_saver_off,
                   imageNetwork:
                       'https://pacefit.com.br/wp-content/uploads/2016/12/alongamento-pos-treino-como-fazer-corretamente.jpeg.webp',
-                  videoLink: '',
+                  categoy: 4,
+                  qntDetails: 1,
                 ),
               ],
             ),

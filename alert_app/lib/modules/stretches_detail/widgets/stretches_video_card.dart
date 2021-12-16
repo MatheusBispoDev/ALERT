@@ -7,12 +7,14 @@ class StretchesVideoCard extends StatelessWidget {
   StretchesVideoCard({
     Key? key,
     required this.onTap,
+    required this.onLongPress,
     required this.videoController,
     required this.pause,
   }) : super(key: key);
 
   final VideoPlayerController videoController;
   final Function() onTap;
+  final Function() onLongPress;
   final bool pause;
 
   @override
@@ -25,6 +27,7 @@ class StretchesVideoCard extends StatelessWidget {
         color: Colors.white,
         child: GestureDetector(
           onTap: onTap,
+          onLongPress: onLongPress,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Container(

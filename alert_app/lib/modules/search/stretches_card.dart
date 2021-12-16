@@ -7,13 +7,15 @@ class StretchesCard extends StatelessWidget {
     required this.title,
     required this.imageNetwork,
     required this.icon,
-    required this.videoLink,
+    required this.categoy,
+    required this.qntDetails,
   }) : super(key: key);
 
   final String title;
   final String imageNetwork;
   final IconData icon;
-  final String videoLink;
+  final int categoy;
+  final int qntDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class StretchesCard extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       child: GestureDetector(
         onTap: () {
-          Get.toNamed('/search/detail', arguments: videoLink);
+          Get.toNamed('/search/detail', arguments: [categoy, qntDetails]);
         },
         child: Material(
           elevation: 2,

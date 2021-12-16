@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class StretchesList extends StatelessWidget {
-  const StretchesList(
-      {Key? key,
-      required this.day,
-      required this.mounth,})
-      : super(key: key);
+  const StretchesList({
+    Key? key,
+    required this.day,
+    required this.mounth,
+    required this.qntList,
+    required this.icons,
+    required this.times,
+  }) : super(key: key);
 
   final String day;
   final String mounth;
+  final int qntList;
+  final List<IconData> icons;
+  final List<String> times;
 
   @override
   Widget build(BuildContext context) {
@@ -39,14 +45,13 @@ class StretchesList extends StatelessWidget {
             SizedBox(
               width: Get.size.width,
               height: Get.size.height * 0.15,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  StretchesCard(icon: Icons.tab, time: '08:45h',),
-                  StretchesCard(icon: Icons.tab, time: '11:30h',),
-                  StretchesCard(icon: Icons.tab, time: '13:00h',),
-                ],
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: qntList,
+                itemBuilder: (context, index) => StretchesCard(
+                  icon: icons[index],
+                  time: times[index],
+                ),
               ),
             ),
           ],
