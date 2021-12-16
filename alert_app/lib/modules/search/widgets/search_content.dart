@@ -1,5 +1,5 @@
 import 'package:alert_app/application/ui/alert_app_icons_icons.dart';
-import 'package:alert_app/modules/search/widgets/stretches_card.dart';
+import 'package:alert_app/modules/search/stretches_card.dart';
 import 'package:alert_app/modules/search/widgets/stretches_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

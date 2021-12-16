@@ -9,7 +9,7 @@ class StretchesDetailModule implements Module {
     GetPage(
       name: '/search/detail',
       //page: () => App(),
-      page: () => StrechesDetailPage(),
+      page: () => YoutubePlayerDemo(),
       binding: StretchesDetailBindings(),
     ),
   ];
